@@ -1,6 +1,6 @@
 # 大屏可视化项目(vue)
 > An awesome project.
-
+访问路径：https://wangyingxiao.github.io/docs/#/
 ## markdown使用
 
     <font size=5>**标题**</font>
@@ -316,7 +316,7 @@
  | value1Style   | 列表中第一个值样式  | Object  | --          | {}       | 否
  | value2Style   | 列表中第二个值样式  | Object  | --          | {}       | 否
  | value3Style   | 列表中第三个值样式  | Object  | --          | {}       | 否
- 
+
  ### numShow数字滚动效果
  需安装 vue-countup-v2
 
