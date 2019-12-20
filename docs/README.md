@@ -1,6 +1,7 @@
 # 大屏可视化项目(vue)
 > An awesome project.
 访问路径：https://wangyingxiao.github.io/docs/#/
+本地 在docs目录下 运行 docsify serve
 ## markdown使用
 
     <font size=5>**标题**</font>
@@ -335,3 +336,23 @@
 效果图如下：
 ![avatar](/images/numShow.jpg)
 
+### 3D柱状图
+基于echarts进行封装的图表
+
+    <template>
+        <echartPlus type="3Dbar"/>
+    </template>
+  效果图如下：
+![avatar](/images/3DBar.jpg)
+  
+<font size=6>Attributes</font>
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填 
+ | - | :- | :-: | :-: | :-:| :-: |
+ | config       | 图表配置项        | Object  | --     | {}        | 否
+ | type         |图表类型           | String  | 3DBar  | 3DBar     | 是
+ | data         | 图表数据          | Array   | --     | []        |是
+ | symbolSize   | 柱状图大小(宽，高) | Array   | --     | [40, 16]  | 否
+ | symbolColor  | 柱状图颜色         | String  | --     | '#3cefff' | 否
+ | circleColor  | 底部圆颜色         | String  | --     | '#14b1eb' | 否
+ 
