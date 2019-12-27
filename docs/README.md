@@ -347,12 +347,115 @@
   
 <font size=6>Attributes</font>
 
-| 参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填 
- | - | :- | :-: | :-: | :-:| :-: |
- | config       | 图表配置项        | Object  | --     | {}        | 否
- | type         |图表类型           | String  | 3DBar  | 3DBar     | 是
- | data         | 图表数据          | Array   | --     | []        |是
- | symbolSize   | 柱状图大小(宽，高) | Array   | --     | [40, 16]  | 否
- | symbolColor  | 柱状图颜色         | String  | --     | '#3cefff' | 否
- | circleColor  | 底部圆颜色         | String  | --     | '#14b1eb' | 否
+| 参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填|
+| - | :- | :-: | :-: | :-:| :-: |
+| type         |图表类型           | String  | 3DBar  | 3DBar     | 是|
+| data         | 图表数据          | Array   | --     | []        |是|
+| circleColor  | 底部圆颜色         | String  | --     | '#14b1eb' | 否|
+| symbolColor  | 柱状图颜色         | String  | --     | '#3cefff' | 否|
+| symbolSize   | 柱状图大小(宽，高) | Array   | --     | [40, 16]  | 否|
+| config       | 图表配置项        | Object  | --     | {}        | 否|
  
+### 水波球效果
+参考配置:https://github.com/ecomfe/echarts-liquidfill#api
+    <template>
+        <echartPlus type="liquidFill" :data=[0.45,0.45] shape="circle" />
+    </template>
+
+![avatar](/images/liquidFill.jpg) ![avatar](/images/liquidFill2.jpg)
+
+<font size=6>Attributes</font>
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填|
+| - | :- | :-: | :-: | :-:| :-: |
+| data         | 图表数据        | Array   | --          | []        |是|
+| type         |图表类型         | String  | liquidFill  | --   | 是|
+| config       | 图表配置项      | Object  | 参考echarts配置项     | {}        | 否|
+| waveColor    | 波纹颜色      | Object  | 参考echarts配置项     | []       | 否|
+| outline      | 外轮廓配置     | Object  | 参考echarts配置项     | {}        | 否|
+| backgroundStyle| 背景配置      | Object  | 参考echarts配置项     | {}        | 否|
+| titleStyle| 标题样式      | Object  | 参考echarts配置项     | {}        | 否|
+| shape        | 水波球样式属性   | String  | 'circle', 'rect', 'roundRect', 'triangle', 'diamond', 'pin', 'arrow','container'| circle  | 否|
+
+### 玫瑰圆效果
+
+    <template>
+       <echartPlus type="rosePie" :data="rosePie"></echartPlus>
+    </template>
+    <script>
+        export default {
+            data () {
+                return {
+                  rosePie:[
+                        {value:43,name:'容量小设备老旧'},
+                        {value:'27',name:'季节性企业用电'},
+                        {value:'17',name:'企业用电高峰'},
+                        {value:'13',name:'节假日'},
+                        {value:'10',name:'临时用电'}
+                    ]
+                };
+            }           
+        }
+    </script>
+
+![avatar](/images/rosePie.jpg) 
+
+<font size=6>Attributes</font>
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填|
+| - | :- | :-: | :-: | :-:| :-: |
+| data         | 图表数据        | Array   | --          | []        |是|
+| type         |图表类型         | String  | rosePie  | --   | 是|
+| config       | 图表配置项      | Object  | 参考echarts配置项     | {}        | 否|
+| borderColor  | 扇形边颜色  | Array  | -- | ["#218de0", "#01cbb3", "#85e647", "#5d5cda", "#05c5b0", "#c29927"]  | 否|
+| fillColor   | 扇形填充颜色 | Array  | -- | --(可为rgb/rgba)  | 否|
+
+### 水波球与饼状图结合
+
+    <template>
+       <echartPlus type="pieAndLiquidFill" :data="data1" title="今日完成进度" subTitle="0.6" />
+    </template>
+    <script>
+        export default {
+            data () {
+                return {
+                  data1: [
+                    {
+                    value: 0.2,
+                    name: "装配完成率"
+                    },
+                    {
+                    value: 0.3,
+                    name: "班检完成率"
+                    },
+                    {
+                    value: 0.4,
+                    name: "初检完成率"
+                    },
+                    {
+                    value: 0.3,
+                    name: "复检完成率"
+                    },
+                    {
+                    value: 0.1,
+                    name: "出厂检完成率"
+                    }
+                ],
+                };
+            }           
+        }
+    </script>
+
+![avatar](/images/pieAndliquidFill.jpg) 
+
+<font size=6>Attributes</font>
+
+| 参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填|
+| - | :- | :-: | :-: | :-:| :-: |
+| data         | 图表数据        | Array   | --          | []        |是|
+| type         |图表类型         | String  | rosePie  | --   | 是|
+| config       | 图表配置项      | Object  | 参考echarts配置项     | {}        | 否|
+| title  | 标题  | String  | -- | "" | 否|
+| subTitle   | 副标题 | String  | -- | ""  | 否|
+| autoToolsTip   | 是否自动提示 | Boolean  | -- |true  | 否|
+
